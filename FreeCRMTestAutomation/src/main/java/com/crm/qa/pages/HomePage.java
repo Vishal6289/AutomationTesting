@@ -2,6 +2,7 @@ package com.crm.qa.pages;
 
 import com.crm.qa.base.TestBase;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -13,6 +14,9 @@ public class HomePage extends TestBase {
 
     @FindBy(xpath = "//span[contains(text(),'Contacts')]")
     WebElement contactsLink;
+
+    @FindBy(xpath = "//button[normalize-space()='Create']")
+    WebElement newContactsLink;
 
     @FindBy(xpath = "//span[contains(text(),'Deals')]")
     WebElement dealsLink;
@@ -30,6 +34,11 @@ public class HomePage extends TestBase {
 
          return driver.getTitle();
     }
+    public boolean verifyCorrectUserName()
+    {
+       return userNameLabel.isDisplayed();
+    }
+
     public ContactsPage clickOnContactsLink()
     {
         contactsLink.click();
@@ -46,5 +55,14 @@ public class HomePage extends TestBase {
     {
         taskLink.click();
         return new TaskPage();
+    }
+    public void clickOnNewContact(){
+//        Actions actions=new Actions(driver);
+//        actions.moveToElement(contactsLink).perform();
+
+        contactsLink.click();
+
+        newContactsLink.click();
+
     }
 }
