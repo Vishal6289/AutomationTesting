@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+//Repository
 public class HomePage extends TestBase {
     LoginPage loginpage;
 
@@ -45,11 +45,11 @@ public class HomePage extends TestBase {
         return new ContactsPage();
     }
 
-    public DealsPage clickOnDealsLink()
-    {
-        contactsLink.click();
-        return clickOnDealsLink();
-    }
+//    public DealsPage clickOnDealsLink()
+//    {
+//        contactsLink.click();
+//        return clickOnDealsLink();
+//    }
 
     public TaskPage clickOnTaskPage()
     {
